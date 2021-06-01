@@ -1,0 +1,39 @@
+[
+    {
+      "id": 1,
+      "name": "Akshaya House",
+      "type": "House",
+      "price": "16000"
+    },
+    {
+        "id": 2,
+        "name": "Nest Villa",
+        "type": "Villa",
+        "price": "16000"
+    },
+    {
+        "id": 3,
+        "name": "Joel Arcade",
+        "type": "Apartment",
+        "price": "20000"
+    },
+    {
+        "id": 4,
+        "name": "Joe Villa",
+        "type": "Villa",
+        "price": "18000"
+    },
+    {
+        "id": 5,
+        "name": "Lakshmi Vilas",
+        "type": "Apartment",
+        "price": "8000"
+    },
+    {
+        "id": 5,
+        "name": "SN Mandir",
+        "type": "House",
+        "price": "24000"
+    }
+    
+  ]
