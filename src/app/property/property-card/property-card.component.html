@@ -1,14 +1,23 @@
 <div class="card">
   <div class="card-image">
     <img
+    *ngIf="property.Picture ; else elseBlock"
     class="card-img-top"
-    src="../../../assets/house_default.png"
+    src= "assets/{{property.Picture}}.png"
     alt="property image"
     
   />
+  <ng-template #elseBlock>
+    <img
+    class="card-img-top"
+    src= "assets/house_default.png"
+    alt="property image"
+  />
+  </ng-template>
+
   <ul class="list-inline text-center member-icon">
     <li class="list-inline-item">
-      <button class="btn btn-light"><fa-icon [icon]="faEdit"></fa-icon></button>
+      <button class="btn btn-light" routerLink="/property-detail/{{property.Id}}"><fa-icon [icon]="faEdit"></fa-icon></button>
     </li>
     <li class="list-inline-item">
       <button class="btn btn-light"><fa-icon [icon]="fafaAddressBook"></fa-icon></button>
@@ -17,8 +26,8 @@
   </ul>
   </div>
   <div class="card-body p-2">
-    <h1>{{ property.name }}</h1>
-    <h2>{{ property.type }}</h2>
-    <h3>{{ property.price }}</h3>
+    <h1>{{ property.Name }}</h1>
+    <h2>{{ property.Type }}</h2>
+    <h3>{{ property.Price }}</h3>
   </div>
 </div>

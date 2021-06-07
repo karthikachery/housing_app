@@ -1,16 +1,24 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-
+import { Observable } from 'rxjs';
+import { map } from 'rxjs/operators';
+import { IProterty } from '../property/property-list/Iproperty.interface';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class HousingService {
+  constructor(private http: HttpClient) {}
 
-  constructor(private http:HttpClient) { }
-
-  getProperties(){
-
-    return this.http.get('data/property.json');
+  getProperties():Observable<IProterty[]> {
+    return this.http.get('data/property.json').pipe(
+      map((data) => {
+        const propertyArray: Array<IProterty> = [];
+        for (let id in data) {
+          propertyArray.push(data[id]);
+        }
+        return propertyArray;
+      })
+    );
   }
 }
